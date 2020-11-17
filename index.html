@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<input type="text" id="search" placeholder="search any word" onchange="search()">
+<p id="translate"></p>
+<script>
+    let arr_en=['pink','yellow','red','black'];
+    let arr_vi=['hong','vang','do','den'];
+    function search()
+    {
+        let word_search=document.getElementById('search').value;
+        let index=arr_en.findIndex(element => element==word_search);
+        if(index==-1)
+        {
+            document.getElementById('translate').innerHTML='word not found!';
+        }
+        else
+        {
+            document.getElementById('translate').innerHTML=arr_vi[index];
+        }
+    }
+</script>
+</body>
+</html>
